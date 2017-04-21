@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Movie App</title>
+	<link rel="stylesheet" type="text/css" href="styles/styles.css">
+	<link href="https://fonts.googleapis.com/css?family=Fjalla+One|Rubik+Mono+One" rel="stylesheet">
+</head>
+<body>
+
+<div ng-app="movieApp" ng-controller="movieCtrl"> 
+
+ <center><div id="header"><p>Search For <br> A Movie</p></div>
+ <p>
+ 	<input type="text" id="search"></p>
+ 	</p>
+
+ 	<button class="button" ng-click="showMovies()">Show movies</button>
+ 	<br>
+ 	<br>
+
+ 	<div class="films" ng-repeat="x in openField">
+ 		<a href="http://www.imdb.com/title/{{ x.imdbID }}/">
+			<h1>{{x.Title}}</h1></a>
+
+			<h4>{{ x.Year }}</h4>
+		<img src="{{x.Poster}}" /> 	
+
+		</div>
+</div>
+
+
+
+<script type="text/javascript" src="scripts/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script type="text/javascript" src="scripts/scripts.js"></script>
+
+</body>
+</html>
